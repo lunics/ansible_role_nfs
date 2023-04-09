@@ -11,7 +11,7 @@
 
   - name: client | mount > NFS shared directories
     ansible.posix.mount:
-      name:   "{{ item.local_path }}"                           # create automatically the mount point directoy
+      name:   "{{ item.local_path }}"    # create automatically the mount point directoy
       src:    "{{ item.server_host }}:{{ item.remote_path }}"
       fstype: "{{ FSTYPE }}"
       dump:   "{{ item.dump | default(omit) }}"

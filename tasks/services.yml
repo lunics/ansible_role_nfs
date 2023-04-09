@@ -6,18 +6,11 @@
       enabled: "{{ nfs_rpcbind_enabled }}"
     when: ansible_distribution == "RedHat"
 
-  ## blocked in state: active (exited)
-  ## maybe because of Unable to request RDMA services: Protocol not supported
-  ## is is just an informational message, not an error
-  # - ansible.builtin.shell: systemctl start {{ nfs.server_daemon }} && systemctl enable {{ nfs.server_daemon }}
   - name: services | start and enable nfs server
     ansible.builtin.service:
       name:    "{{ nfs.server_daemon }}"
       state:   started
       enabled: yes
-    retries: 2        ## A TESTER
-    delay: 5
     when: nfs_exports | length
-
 
   tags: nfs_services

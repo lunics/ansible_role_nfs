@@ -1,8 +1,6 @@
 - block:
   - ansible.builtin.import_tasks: packages.yml
 
-  # - ansible.builtin.import_tasks: config.yml  ## TODO /etc/nfs.conf
-
   - ansible.builtin.import_tasks: server.yml
 
   - ansible.builtin.import_tasks: client.yml

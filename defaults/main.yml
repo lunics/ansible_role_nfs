@@ -1,13 +1,14 @@
 # SERVER
 nfs_exports: []
-  # - /srv/homes       hostname1(rw,sync,no_subtree_check) hostname2(ro,sync,no_subtree_check)    # NFSv2 and NFSv3
-  # - /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)                                        # NFSv4
+  # - "/srv/nfs/share        192.168.10.1/24(rw,sync,subtree_check,all_squash)"
+  # - "/srv/nfs/dirA         hostname1(rw,sync,no_subtree_check) hostname2(ro,sync,no_subtree_check)"
 
 # CLIENT
 nfs_imports: []
   # - local_path:  /path/share_dir
+  #   remote_path: /srv/nfs/share
   #   server_host: host-machine2
-  #   remote_path: /srv/share_dir
+  #   server_host: 192.168.1.32
   #   dump:
   #   opts:
   #   passno:
