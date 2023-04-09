@@ -1,0 +1,18 @@
+_nfs:
+  packages:
+    default:
+      - nfs-utils             # Archlinux, Fedora, RedHat
+      - rpcbind               # enable remote machine to run remote procedure (function)
+      # nfsidmap              # library to help mapping IDs, mainly for NFSv4
+      # libnfs                # client library for accessing NFS shares
+    Debian:
+      - nfs-common
+      - nfs-kernel-server
+
+  server_daemon:
+    default: nfs-server         # Archlinux, Fedora, RedHat
+    Debian:  nfs-kernel-server
+
+nfs:
+  packages:      "{{ _nfs.packages[ansible_os_family]      | default(_nfs.packages['default'])      }}"
+  server_daemon: "{{ _nfs.server_daemon[ansible_os_family] | default(_nfs.server_daemon['default']) }}"

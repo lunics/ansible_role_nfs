@@ -1,0 +1,22 @@
+# SERVER
+nfs_exports: []
+  # - /srv/homes       hostname1(rw,sync,no_subtree_check) hostname2(ro,sync,no_subtree_check)    # NFSv2 and NFSv3
+  # - /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)                                        # NFSv4
+
+# CLIENT
+nfs_imports: []
+  # - local_path:  /path/share_dir
+  #   server_host: host-machine2
+  #   remote_path: /srv/share_dir
+  #   dump:
+  #   opts:
+  #   passno:
+  #   state:
+
+nfs_only_v4: false    # enable only NFSv4
+
+nfs_version: 4                                       # NFS version, default 4
+nfs_mount_opts: rsize=8192,wsize=8192,timeo=14,intr  # default NFSv4 mount options
+
+nfs_rpcbind_state:   started
+nfs_rpcbind_enabled: true

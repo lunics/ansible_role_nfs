@@ -1,0 +1,8 @@
+- name: handlers | command > reload exportfs
+  ansible.builtin.command: exportfs -ra
+  become: yes
+
+- name: handlers | service > restart idmapd
+  ansible.builtin.service:
+    name:  idmapd
+    state: restarted

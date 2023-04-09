@@ -1,0 +1,10 @@
+- block:
+  - name: config | template > genereate nfs config file
+    ansible.builtin.template:
+      src:  nfs.conf
+      dest: /etc/nfs.conf
+      owner: root
+      group: root
+      mode:  0640
+
+  tags: nfs_config
