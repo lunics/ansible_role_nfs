@@ -1,6 +1,6 @@
 - block:
   - name: package > install nfs packages
-    ansible.builtin.package:
+    package:
       name: "{{ item }}"
     with_items: "{{ nfs.packages }}"
 

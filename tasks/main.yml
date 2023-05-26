@@ -1,11 +1,12 @@
 - block:
-  - ansible.builtin.import_tasks: packages.yml
+  - import_tasks: packages.yml
 
-  - ansible.builtin.import_tasks: server.yml
+  - import_tasks: server.yml
 
-  - ansible.builtin.import_tasks: client.yml
+  - import_tasks: client.yml
 
-  - ansible.builtin.import_tasks: services.yml
+  - import_tasks: services.yml
 
+  become_user: root
   become: true
   tags: nfs

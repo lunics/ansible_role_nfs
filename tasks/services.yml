@@ -1,13 +1,13 @@
 - block:
   - name: services | ensure rpcbind is running as configured
-    ansible.builtin.service:
+    service:
       name:    rpcbind
       state:   "{{ nfs_rpcbind_state }}"
       enabled: "{{ nfs_rpcbind_enabled }}"
     when: ansible_distribution == "RedHat"
 
   - name: services | start and enable nfs server
-    ansible.builtin.service:
+    service:
       name:    "{{ nfs.server_daemon }}"
       state:   started
       enabled: yes
