@@ -20,7 +20,7 @@ This role is a mix of these repos:
 - [ome](https://github.com/ome/ansible-role-nfs-mount)
 - [indigo-dc](https://github.com/indigo-dc/ansible-role-nfs)
 ---
-*Only tested on Arch*
+*Only tested on Archlinux*
 #### Todo
 - [ ] Add compatibility for RHEL, Debian
 - [ ] Add "state" to nfs exports
