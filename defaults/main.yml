@@ -5,14 +5,17 @@ nfs_exports: []
 
 # CLIENT
 nfs_imports: []
-  # - local_path:  /path/share_dir
-  #   remote_path: /srv/nfs/share
-  #   server_host: host-machine2
+  # - local_path:  /path/share_dir    required
+  #   remote_path: /srv/nfs/share     required
+  #   server_host: host-machine2      required
   #   server_host: 192.168.1.32
   #   dump:
   #   opts:
   #   passno:
-  #   state:
+  #   state: mounted                  optional, default=mounted
+  #     unmouted                      unmount without changing fstab
+  #     absent                        unmount and remove it from fstab
+  #     present                       does't mount, just add entry on fstab
 
 nfs_only_v4: false    # enable only NFSv4
 
