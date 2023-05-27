@@ -1,4 +1,4 @@
-# NFS Ansible role
+# Ansible role: NFS
 
 ### Examples:
 [see defaults](https://github.com/lunics/ansible_role_nfs/blob/main/defaults/main.yml)
@@ -12,7 +12,7 @@ nfs_imports:
   - local_path:  /path/share_dir
     remote_path: /srv/nfs/share
     server_host: 192.168.1.32 or hostname
-    state: mounted              # optional
+    state:       mounted         # optional
 ```
 ---
 This role is a mix of these repos:
