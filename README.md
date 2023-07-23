@@ -1,7 +1,9 @@
 # Ansible role: NFS
 
+*Only tested on Archlinux.*
+
 ### Examples:
-[see defaults](https://github.com/lunics/ansible_role_nfs/blob/main/defaults/main.yml)
+Override [defaults](https://github.com/lunics/ansible_role_nfs/blob/main/defaults/main.yml)
 ```yaml
 # Add this list to share a directory, server side
 nfs_exports:
@@ -14,13 +16,14 @@ nfs_imports:
     server_host: 192.168.1.32 or hostname
     state:       mounted         # optional
 ```
+
 ---
 This role is a mix of these repos:
 - [geerlingguy](https://github.com/geerlingguy/ansible-role-nfs)
 - [ome](https://github.com/ome/ansible-role-nfs-mount)
 - [indigo-dc](https://github.com/indigo-dc/ansible-role-nfs)
 ---
-*Only tested on Archlinux*
+
 #### Todo:
 - [ ] Add compatibility for RHEL, Debian
 - [ ] Add "state" to nfs exports
