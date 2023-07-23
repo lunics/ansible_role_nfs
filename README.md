@@ -1,6 +1,6 @@
 # Ansible role: NFS
 
-*Only tested on Archlinux.*
+Only tested on Archlinux.
 
 ### Examples:
 Override [defaults](https://github.com/lunics/ansible_role_nfs/blob/main/defaults/main.yml)
