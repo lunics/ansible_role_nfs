@@ -25,6 +25,5 @@ This role is a mix of these repos:
 ---
 
 #### Todo:
-- [ ] Add compatibility for RHEL, Debian
-- [ ] Add "state" to nfs exports
-- [ ] Template nfs.conf
+- Add "state" to nfs exports
+- Template nfs.conf
